@@ -9,7 +9,12 @@ import java.util.concurrent.Executors;
 
 public class PingSend extends PingPong implements Runnable {
 	
-	long debut;
+	protected long debut;
+	protected DatagramSocket socket;
+	
+	public PingSend(DatagramSocket socket){
+		this.socket = socket;
+	}
 
 	@Override
 	public void run(){
@@ -33,15 +38,12 @@ public class PingSend extends PingPong implements Runnable {
 		byte[] buf = null;
 		DatagramPacket packet = null;
 		
-		//se creeaza un socket pe un port oarecare
-		DatagramSocket socket = new DatagramSocket();
-		
 		try {
 			//trimite un pachet catre toti clientii din grup
 			String s = "";
 			buf = s.getBytes();
 			
-			packet = new DatagramPacket(buf, buf.length, group, port);
+			packet = new DatagramPacket(buf, buf.length, group, port);			
 			while(true){
 				Thread.sleep(WAIT);
 				debut = System.currentTimeMillis();

@@ -6,6 +6,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import server.serverCore.heartbeat.*;
+import server.serverCore.perf.*;
 import server.services.*;
 
 public class Server {
@@ -18,21 +19,22 @@ public class Server {
 		
 		List<Runnable> runnables = new ArrayList<Runnable>();
 		
-		HBReceive heartBeat = new HBReceive();
+		//HBReceive heartBeat = new HBReceive();
 		
 		//HeartBeat
-		//runnables.add(new HBReceive());
-		runnables.add(heartBeat);
-		runnables.add(new HBSend(serverName));
+		//runnables.add(new HBReceive(this));
+		//runnables.add(new HBSend(serverName));
 		
 		//----Performances
 		//PingPong
+		runnables.add(new PongSend(serverName));
+		runnables.add(new ReceivePong());
 		
 		//SelfPerformance
-		
+		//runnables.add(new SelfPerf());
 		
 		//Services
-		runnables.add(new HelloWorld());
+		//runnables.add(new HelloWorld());
 		
 		
 		//Cette fois on créer un pool de 10 threads maximum

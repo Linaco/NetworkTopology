@@ -12,7 +12,7 @@ public class Main {
 		System.out.println();
 
         new Server(1);
-        //new Server(2);
+        new Server(2);
         //new Server(3);
 
         //System.out.println("---------------END-------------");

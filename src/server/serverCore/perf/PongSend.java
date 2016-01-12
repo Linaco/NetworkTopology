@@ -5,6 +5,7 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
+import java.net.SocketException;
 
 public class PongSend extends PingPong implements Runnable {
 	DatagramSocket datagramSocket = null;
@@ -21,6 +22,9 @@ public class PongSend extends PingPong implements Runnable {
 	public void run() {
 		
 		try {
+			
+			datagramSocket = new DatagramSocket();
+			
 			buildBuf();
 			receive();
 		} catch (IOException e) {
@@ -61,10 +65,12 @@ public class PongSend extends PingPong implements Runnable {
 	}
 
 	private void sendPong(InetAddress address, int port) throws IOException {
+		System.out.println("Ping received on " + name + " from " + address + ":" + port);
 				
 		//Trimite un pachet cu raspunsul catre client
 		raspuns = new DatagramPacket(buf, buf.length, address, port);
 		datagramSocket.send(raspuns);
+		
 		
 	}
 	
@@ -74,6 +80,7 @@ public class PongSend extends PingPong implements Runnable {
 		
 		//Construirea raspunsului
 		String s = name + "";
+		System.out.println(s);
 		buf = s.getBytes();
 		
 	}

@@ -4,10 +4,8 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
-public class PingSend extends PingPong implements Runnable {
+public class PingSend implements PingPong {
 	
 	protected long debut;
 	protected DatagramSocket socket;
@@ -35,32 +33,22 @@ public class PingSend extends PingPong implements Runnable {
 	private void send() throws IOException, InterruptedException {
 		InetAddress group = InetAddress.getByName(IP);
 		
-		byte[] buf = null;
+		byte[] buf = new byte[size];
 		DatagramPacket packet = null;
 		
 		try {
-			//trimite un pachet catre toti clientii din grup
-			String s = "";
-			buf = s.getBytes();
 			
 			packet = new DatagramPacket(buf, buf.length, group, port);			
 			while(true){
 				Thread.sleep(WAIT);
 				debut = System.currentTimeMillis();
-				socket.send(updatePacket(packet));
+				socket.send(packet);
 			}
 		
 		} finally {
 			socket.close();
 		
 		}
-	}
-
-	private DatagramPacket updatePacket(DatagramPacket packet) {
-		// TODO Auto-generated method stub
-		
-		return packet;
-		
 	}
 
 }

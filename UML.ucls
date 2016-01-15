@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.9" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="server.serverCore.perf.ReceivePong" project="NetworkTopology" 
+    file="/NetworkTopology/src/server/serverCore/perf/ReceivePong.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="128" width="138" x="1333" y="548"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="true" protected="false" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="server.serverCore.heartbeat.HBReceive" project="NetworkTopology" 
+    file="/NetworkTopology/src/server/serverCore/heartbeat/HBReceive.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="164" width="157" x="1800" y="548"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="true" protected="false" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="server.serverCore.transfert.TransfertSend" project="NetworkTopology" 
+    file="/NetworkTopology/src/server/serverCore/transfert/TransfertSend.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="92" width="95" x="1763" y="752"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="true" protected="false" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="4" language="java" name="server.serverCore.heartbeat.Heartbeat" project="NetworkTopology" 
+    file="/NetworkTopology/src/server/serverCore/heartbeat/Heartbeat.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="56" width="99" x="1978" y="752"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="true" protected="false" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="5" language="java" name="server.serverCore.perf.PingSend" project="NetworkTopology" 
+    file="/NetworkTopology/src/server/serverCore/perf/PingSend.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="74" width="81" x="1231" y="752"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="true" protected="false" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="6" language="java" name="server.serverCore.transfert.Transfert" project="NetworkTopology" 
+    file="/NetworkTopology/src/server/serverCore/transfert/Transfert.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="56" width="95" x="1772" y="974"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="true" protected="false" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="7" language="java" name="server.serverCore.Info" project="NetworkTopology" 
+    file="/NetworkTopology/src/server/serverCore/Info.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="56" width="71" x="1511" y="548"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="true" protected="false" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="server.Server" project="NetworkTopology" 
+    file="/NetworkTopology/src/server/Server.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="92" width="246" x="1622" y="380"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="true" protected="false" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="server.serverCore.transfert.SendResponce" project="NetworkTopology" 
+    file="/NetworkTopology/src/server/serverCore/transfert/SendResponce.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="182" width="155" x="1568" y="752"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="true" protected="false" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="server.serverCore.ServerCore" project="NetworkTopology" 
+    file="/NetworkTopology/src/server/serverCore/ServerCore.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="128" width="124" x="1622" y="212"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="true" protected="false" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="11" language="java" name="server.serverCore.perf.PingPong" project="NetworkTopology" 
+    file="/NetworkTopology/src/server/serverCore/perf/PingPong.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="56" width="83" x="1275" y="974"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="true" protected="false" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="12" language="java" name="server.serverCore.perf.SelfPerf" project="NetworkTopology" 
+    file="/NetworkTopology/src/server/serverCore/perf/SelfPerf.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="74" width="81" x="1501" y="212"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="true" protected="false" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="server.serverCore.transfert.ReceiveResponce" project="NetworkTopology" 
+    file="/NetworkTopology/src/server/serverCore/transfert/ReceiveResponce.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="164" width="138" x="1622" y="548"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="true" protected="false" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="server.serverCore.perf.PongSend" project="NetworkTopology" 
+    file="/NetworkTopology/src/server/serverCore/perf/PongSend.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="164" width="155" x="1373" y="752"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="true" protected="false" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="server.serverCore.heartbeat.HBSend" project="NetworkTopology" 
+    file="/NetworkTopology/src/server/serverCore/heartbeat/HBSend.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="74" width="99" x="1978" y="212"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="true" protected="false" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <realization id="16">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <association id="17">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="18" name="server"/>      
+      <multiplicity id="19" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="20">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </realization>  
+  <realization id="21">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <association id="22">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="23" name="server"/>      
+      <multiplicity id="24" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="25">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <realization id="26">    
+    <bendpoint x="1342" y="752"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <realization id="27">    
+    <bendpoint x="1987" y="380"/>    
+    <bendpoint x="1987" y="548"/>    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="4"/>  
+  </realization>  
+  <association id="28">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="29" name="transfert"/>      
+      <multiplicity id="30" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="31">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="32" name="info"/>      
+      <multiplicity id="33" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="34">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="35" name="heartBeat"/>      
+      <multiplicity id="36" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="37">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="38" name="sendTransfert"/>      
+      <multiplicity id="39" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="40">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="41" name="pingSend"/>      
+      <multiplicity id="42" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="43">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <association id="44">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="45" name="pingPong"/>      
+      <multiplicity id="46" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="47">    
+    <bendpoint x="1888" y="752"/>    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <realization id="48">    
+    <bendpoint x="1200" y="380"/>    
+    <bendpoint x="1200" y="548"/>    
+    <bendpoint x="1200" y="752"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <association id="49">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="50" name="server"/>      
+      <multiplicity id="51" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="false" package="true" protected="false" private="true" static="true"/>    
+    <operations public="false" package="true" protected="false" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

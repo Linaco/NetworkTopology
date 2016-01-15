@@ -1,9 +1,16 @@
 package server.serverCore.perf;
 
-public class SelfPerf  extends PingPong implements Runnable {
+import server.Server;
+
+public class SelfPerf implements PingPong {
 	
-	//int it = 1;
+	Server server;
+	
 	int perf = 0;
+	
+	public SelfPerf(Server server){
+		this.server = server;
+	}
 
 	@Override
 	public void run() {
@@ -24,11 +31,22 @@ public class SelfPerf  extends PingPong implements Runnable {
 		
 		while(true){
 			debut = System.currentTimeMillis();
-			for(int i = 0; i < 1000000000 ; i++){
+			int k = 0;
+			for(int i = 0; i < 100000000 ; i++){
+				k = i * k * i ;
 			}
 			time = System.currentTimeMillis();
 			
-			perf = (int)(time - debut);
+			long delta = time - debut;
+			if(delta == 0)
+				delta = 100000;
+			
+			perf = (int)(100000 / (delta));
+			
+			System.out.println("Perf : " + perf);
+			
+			server.info.selfPerf = perf;
+			//System.out.println("SELFPERF : Sur server.info : " + server.info.selfPerf);
 			
 			Thread.sleep(3000);
 			

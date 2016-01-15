@@ -1,14 +1,16 @@
 package server.serverCore.heartbeat;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
-import java.net.UnknownHostException;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+
+import server.serverCore.Info;
 
 //Date date = new Date();
 
@@ -19,7 +21,8 @@ public class HBReceive implements Heartbeat {
 	}
 	
 	Map<Integer, Date> Runtime = new HashMap<>();
-	Map<Integer, String> Services = new HashMap<>();
+	Map<Integer, Integer> portServers = new HashMap<>();
+	Map<Integer, Integer> perf = new HashMap<>();
 
 	@Override
 	public void run() {
@@ -38,33 +41,32 @@ public class HBReceive implements Heartbeat {
 		
 		MulticastSocket socket = null;
 		
-		byte[] buf = null;
+		byte[] buf = new byte[1024];
 		
 		try {
 			//se alatura grupului aflat la adresa si portul specificate
 			socket = new MulticastSocket(port);
-			System.out.println("Loopback mode disabled: " +
-					socket.getLoopbackMode());
+
 			socket.joinGroup(group);
 			//se asteapta un pachet venit pe adresa grupului
-			buf = new byte[256];
+			//buf = new byte[256];
 			DatagramPacket packet = new DatagramPacket(buf, buf.length);
 			
 			while(true){
 				socket.receive(packet);
 				
-				//se afiseaza continutul pachetului
-				String s = new String(
-					packet.getData(),
-					packet.getOffset(),
-					packet.getLength());
-			
-				System.out.println(s);
+				//Get object
+				byte[] data = packet.getData();
+                ByteArrayInputStream in = new ByteArrayInputStream(data);
+                ObjectInputStream is = new ObjectInputStream(in);
+                Info info = (Info) is.readObject();
 				
 				//Updating the runtime map
-				updateMap(s);
+				updateMap(info);
 			}
 		
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
 		} finally {
 			socket.leaveGroup(group);
 			socket.close();
@@ -72,28 +74,29 @@ public class HBReceive implements Heartbeat {
 		}
 	}
 
-	private void updateMap(String s) {
+	private void updateMap(Info info) {
+		//System.out.println(info.name);
+		Runtime.put(info.name, new Date());
 		
-		String[] parts = s.split("-");
-		int name = Integer.parseInt(parts[0]);
+		//perf
+		perf.put(info.name, info.selfPerf);
 		
-		String services = getServices(parts);
-		
-		//Services.put(name, Arrays.copyOfRange(parts, 1, (parts.length - 1));
-		Services.put(name, services);		
-		Runtime.put(name, new Date());
+		//port for the user to connect 
+		portServers.put(info.name, info.port);
 		
 	}
+	
+	public Map<Integer, Date> getRuntime(){
+		return Runtime;
+	}
+	
+	public Map<Integer, Integer> getPerf(){
+		return perf;
+	}
 
-	private String getServices(String[] parts) {
-		String s = "";
-		
-		for (int i = 1; i < parts.length; i++){
-			s += parts[i] + "; ";
-		}
-		
-		
-		return s;
+	public Map<Integer, Integer> getPort() {
+		// TODO Auto-generated method stub
+		return portServers;
 	}
 
 }

@@ -3,14 +3,16 @@ package server.serverCore.perf;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
-import java.net.InetAddress;
-import java.net.MulticastSocket;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class ReceivePong extends PingPong implements Runnable {
+public class ReceivePong implements PingPong {
+	//To store date from ping
+	Map<Integer, Long> Runtime = new HashMap<>();
 	
+	//To control the send
 	PingSend pingSend;
 	DatagramSocket socket = null;
 
@@ -42,25 +44,16 @@ public class ReceivePong extends PingPong implements Runnable {
 		return Runtime;
 	}
 	
-	public void receive() throws IOException {
+	private void receive() throws IOException {
 		
 		long time;
-		
-		//adresa IP si portul care reprezinta grupul de clienti
-		InetAddress group = InetAddress.getByName(IP);
-		
-		//DatagramSocket socket = null;
 		
 		byte[] buf = null;
 		
 		try {
 			//se asteapta un pachet venit pe adresa grupului
-			buf = new byte[256];
+			buf = new byte[size];
 			DatagramPacket packet = new DatagramPacket(buf, buf.length);
-			System.out.println("---------------------------------------------------------");
-			System.out.println("---------------------ReceivePong-------------------------");
-			System.out.println("socket : " + socket.getLocalPort());
-			System.out.println("---------------------------------------------------------");
 			while(true){
 				socket.receive(packet);
 				
@@ -71,6 +64,8 @@ public class ReceivePong extends PingPong implements Runnable {
 					packet.getData(),
 					packet.getOffset(),
 					packet.getLength());
+				
+				System.out.println("TIME : " + socket.getLocalPort() + " to " + packet.getPort() + " : " + (time - pingSend.getDebut()));
 				
 				//Updating the runtime map
 				updateMap(s, time);
@@ -85,11 +80,10 @@ public class ReceivePong extends PingPong implements Runnable {
 	private void updateMap(String s, long time) {
 		
 		//String[] parts = s.split("-");
-		System.out.println("String :" + s + "<-");
 		int name = Integer.parseInt(s);
 		
 		Runtime.put(name, (time - pingSend.getDebut()));
-		System.out.println("Pong received on from " + name);
+		
 		
 	}
 
